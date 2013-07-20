@@ -10,12 +10,20 @@
 		869DE34D179A7A5800E5AA9B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 869DE34C179A7A5800E5AA9B /* UIKit.framework */; };
 		869DE34F179A7A5800E5AA9B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 869DE34E179A7A5800E5AA9B /* Foundation.framework */; };
 		869DE351179A7A5800E5AA9B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 869DE350179A7A5800E5AA9B /* CoreGraphics.framework */; };
-		869DE357179A7A5800E5AA9B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 869DE355179A7A5800E5AA9B /* InfoPlist.strings */; };
 		869DE359179A7A5800E5AA9B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 869DE358179A7A5800E5AA9B /* main.m */; };
 		869DE35D179A7A5800E5AA9B /* BBUAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 869DE35C179A7A5800E5AA9B /* BBUAppDelegate.m */; };
 		869DE35F179A7A5800E5AA9B /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 869DE35E179A7A5800E5AA9B /* Default.png */; };
 		869DE361179A7A5800E5AA9B /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 869DE360179A7A5800E5AA9B /* Default@2x.png */; };
 		869DE363179A7A5800E5AA9B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 869DE362179A7A5800E5AA9B /* Default-568h@2x.png */; };
+		869DE36E179A80F000E5AA9B /* BBUMessageComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 869DE36D179A80F000E5AA9B /* BBUMessageComposeViewController.m */; };
+		869DE371179A81D700E5AA9B /* BBUAccountSelectorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 869DE370179A81D700E5AA9B /* BBUAccountSelectorViewController.m */; };
+		869DE373179A824F00E5AA9B /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 869DE372179A824F00E5AA9B /* Accounts.framework */; };
+		869DE376179A83CF00E5AA9B /* DETweetSheetCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 869DE375179A83CF00E5AA9B /* DETweetSheetCardView.m */; };
+		869DE379179A83F600E5AA9B /* DETweetTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 869DE378179A83F600E5AA9B /* DETweetTextView.m */; };
+		869DE37C179A840900E5AA9B /* DERuledView.m in Sources */ = {isa = PBXBuildFile; fileRef = 869DE37B179A840900E5AA9B /* DERuledView.m */; };
+		869DE37F179A847300E5AA9B /* DETweetGradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = 869DE37E179A847300E5AA9B /* DETweetGradientView.m */; };
+		869DE382179A853000E5AA9B /* BBUMessagePoster.m in Sources */ = {isa = PBXBuildFile; fileRef = 869DE381179A853000E5AA9B /* BBUMessagePoster.m */; };
+		869DE385179A9DDA00E5AA9B /* UIView+Geometry.m in Sources */ = {isa = PBXBuildFile; fileRef = 869DE384179A9DDA00E5AA9B /* UIView+Geometry.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,7 +32,6 @@
 		869DE34E179A7A5800E5AA9B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		869DE350179A7A5800E5AA9B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		869DE354179A7A5800E5AA9B /* BBUMessageComposer-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BBUMessageComposer-Info.plist"; sourceTree = "<group>"; };
-		869DE356179A7A5800E5AA9B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		869DE358179A7A5800E5AA9B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		869DE35A179A7A5800E5AA9B /* BBUMessageComposer-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BBUMessageComposer-Prefix.pch"; sourceTree = "<group>"; };
 		869DE35B179A7A5800E5AA9B /* BBUAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BBUAppDelegate.h; sourceTree = "<group>"; };
@@ -32,6 +39,23 @@
 		869DE35E179A7A5800E5AA9B /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		869DE360179A7A5800E5AA9B /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		869DE362179A7A5800E5AA9B /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		869DE36C179A80F000E5AA9B /* BBUMessageComposeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBUMessageComposeViewController.h; sourceTree = "<group>"; };
+		869DE36D179A80F000E5AA9B /* BBUMessageComposeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBUMessageComposeViewController.m; sourceTree = "<group>"; };
+		869DE36F179A81D700E5AA9B /* BBUAccountSelectorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBUAccountSelectorViewController.h; sourceTree = "<group>"; };
+		869DE370179A81D700E5AA9B /* BBUAccountSelectorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBUAccountSelectorViewController.m; sourceTree = "<group>"; };
+		869DE372179A824F00E5AA9B /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		869DE374179A83CF00E5AA9B /* DETweetSheetCardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DETweetSheetCardView.h; sourceTree = "<group>"; };
+		869DE375179A83CF00E5AA9B /* DETweetSheetCardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DETweetSheetCardView.m; sourceTree = "<group>"; };
+		869DE377179A83F600E5AA9B /* DETweetTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DETweetTextView.h; sourceTree = "<group>"; };
+		869DE378179A83F600E5AA9B /* DETweetTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DETweetTextView.m; sourceTree = "<group>"; };
+		869DE37A179A840900E5AA9B /* DERuledView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DERuledView.h; sourceTree = "<group>"; };
+		869DE37B179A840900E5AA9B /* DERuledView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DERuledView.m; sourceTree = "<group>"; };
+		869DE37D179A847300E5AA9B /* DETweetGradientView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DETweetGradientView.h; sourceTree = "<group>"; };
+		869DE37E179A847300E5AA9B /* DETweetGradientView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DETweetGradientView.m; sourceTree = "<group>"; };
+		869DE380179A853000E5AA9B /* BBUMessagePoster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBUMessagePoster.h; sourceTree = "<group>"; };
+		869DE381179A853000E5AA9B /* BBUMessagePoster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBUMessagePoster.m; sourceTree = "<group>"; };
+		869DE383179A9DDA00E5AA9B /* UIView+Geometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Geometry.h"; sourceTree = "<group>"; };
+		869DE384179A9DDA00E5AA9B /* UIView+Geometry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Geometry.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				869DE373179A824F00E5AA9B /* Accounts.framework in Frameworks */,
 				869DE34D179A7A5800E5AA9B /* UIKit.framework in Frameworks */,
 				869DE34F179A7A5800E5AA9B /* Foundation.framework in Frameworks */,
 				869DE351179A7A5800E5AA9B /* CoreGraphics.framework in Frameworks */,
@@ -51,9 +76,11 @@
 		869DE340179A7A5800E5AA9B = {
 			isa = PBXGroup;
 			children = (
-				869DE352179A7A5800E5AA9B /* BBUMessageComposer */,
+				869DE352179A7A5800E5AA9B /* Code */,
 				869DE34B179A7A5800E5AA9B /* Frameworks */,
 				869DE34A179A7A5800E5AA9B /* Products */,
+				869DE369179A7F2A00E5AA9B /* Resources */,
+				869DE353179A7A5800E5AA9B /* Supporting Files */,
 			);
 			sourceTree = "<group>";
 		};
@@ -68,35 +95,65 @@
 		869DE34B179A7A5800E5AA9B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				869DE34C179A7A5800E5AA9B /* UIKit.framework */,
-				869DE34E179A7A5800E5AA9B /* Foundation.framework */,
+				869DE372179A824F00E5AA9B /* Accounts.framework */,
 				869DE350179A7A5800E5AA9B /* CoreGraphics.framework */,
+				869DE34E179A7A5800E5AA9B /* Foundation.framework */,
+				869DE34C179A7A5800E5AA9B /* UIKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		869DE352179A7A5800E5AA9B /* BBUMessageComposer */ = {
+		869DE352179A7A5800E5AA9B /* Code */ = {
 			isa = PBXGroup;
 			children = (
-				869DE35B179A7A5800E5AA9B /* BBUAppDelegate.h */,
-				869DE35C179A7A5800E5AA9B /* BBUAppDelegate.m */,
-				869DE353179A7A5800E5AA9B /* Supporting Files */,
+				869DE36A179A80B700E5AA9B /* Example */,
+				869DE36F179A81D700E5AA9B /* BBUAccountSelectorViewController.h */,
+				869DE370179A81D700E5AA9B /* BBUAccountSelectorViewController.m */,
+				869DE36C179A80F000E5AA9B /* BBUMessageComposeViewController.h */,
+				869DE36D179A80F000E5AA9B /* BBUMessageComposeViewController.m */,
+				869DE380179A853000E5AA9B /* BBUMessagePoster.h */,
+				869DE381179A853000E5AA9B /* BBUMessagePoster.m */,
+				869DE37A179A840900E5AA9B /* DERuledView.h */,
+				869DE37B179A840900E5AA9B /* DERuledView.m */,
+				869DE37D179A847300E5AA9B /* DETweetGradientView.h */,
+				869DE37E179A847300E5AA9B /* DETweetGradientView.m */,
+				869DE374179A83CF00E5AA9B /* DETweetSheetCardView.h */,
+				869DE375179A83CF00E5AA9B /* DETweetSheetCardView.m */,
+				869DE377179A83F600E5AA9B /* DETweetTextView.h */,
+				869DE378179A83F600E5AA9B /* DETweetTextView.m */,
 			);
-			path = BBUMessageComposer;
+			path = Code;
 			sourceTree = "<group>";
 		};
 		869DE353179A7A5800E5AA9B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
 				869DE354179A7A5800E5AA9B /* BBUMessageComposer-Info.plist */,
-				869DE355179A7A5800E5AA9B /* InfoPlist.strings */,
-				869DE358179A7A5800E5AA9B /* main.m */,
 				869DE35A179A7A5800E5AA9B /* BBUMessageComposer-Prefix.pch */,
+				869DE358179A7A5800E5AA9B /* main.m */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		869DE369179A7F2A00E5AA9B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
 				869DE35E179A7A5800E5AA9B /* Default.png */,
 				869DE360179A7A5800E5AA9B /* Default@2x.png */,
 				869DE362179A7A5800E5AA9B /* Default-568h@2x.png */,
 			);
-			name = "Supporting Files";
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		869DE36A179A80B700E5AA9B /* Example */ = {
+			isa = PBXGroup;
+			children = (
+				869DE35B179A7A5800E5AA9B /* BBUAppDelegate.h */,
+				869DE35C179A7A5800E5AA9B /* BBUAppDelegate.m */,
+				869DE383179A9DDA00E5AA9B /* UIView+Geometry.h */,
+				869DE384179A9DDA00E5AA9B /* UIView+Geometry.m */,
+			);
+			path = Example;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,7 +208,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				869DE357179A7A5800E5AA9B /* InfoPlist.strings in Resources */,
 				869DE35F179A7A5800E5AA9B /* Default.png in Resources */,
 				869DE361179A7A5800E5AA9B /* Default@2x.png in Resources */,
 				869DE363179A7A5800E5AA9B /* Default-568h@2x.png in Resources */,
@@ -167,21 +223,18 @@
 			files = (
 				869DE359179A7A5800E5AA9B /* main.m in Sources */,
 				869DE35D179A7A5800E5AA9B /* BBUAppDelegate.m in Sources */,
+				869DE36E179A80F000E5AA9B /* BBUMessageComposeViewController.m in Sources */,
+				869DE371179A81D700E5AA9B /* BBUAccountSelectorViewController.m in Sources */,
+				869DE376179A83CF00E5AA9B /* DETweetSheetCardView.m in Sources */,
+				869DE379179A83F600E5AA9B /* DETweetTextView.m in Sources */,
+				869DE37C179A840900E5AA9B /* DERuledView.m in Sources */,
+				869DE37F179A847300E5AA9B /* DETweetGradientView.m in Sources */,
+				869DE382179A853000E5AA9B /* BBUMessagePoster.m in Sources */,
+				869DE385179A9DDA00E5AA9B /* UIView+Geometry.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		869DE355179A7A5800E5AA9B /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				869DE356179A7A5800E5AA9B /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		869DE364179A7A5800E5AA9B /* Debug */ = {
@@ -206,6 +259,7 @@
 					"$(inherited)",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
@@ -230,6 +284,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
@@ -244,8 +299,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "BBUMessageComposer/BBUMessageComposer-Prefix.pch";
-				INFOPLIST_FILE = "BBUMessageComposer/BBUMessageComposer-Info.plist";
+				GCC_PREFIX_HEADER = "Supporting Files/BBUMessageComposer-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/Supporting Files/BBUMessageComposer-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -255,8 +310,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "BBUMessageComposer/BBUMessageComposer-Prefix.pch";
-				INFOPLIST_FILE = "BBUMessageComposer/BBUMessageComposer-Info.plist";
+				GCC_PREFIX_HEADER = "Supporting Files/BBUMessageComposer-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/Supporting Files/BBUMessageComposer-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -281,6 +336,7 @@
 				869DE368179A7A5800E5AA9B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
