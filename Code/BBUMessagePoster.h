@@ -26,6 +26,11 @@
 @property (nonatomic, weak) id<BBUMessagePosterDelegate> delegate;
 
 +(NSArray*)accounts;
++(NSString*)lastAccountIdentifier;
++(NSInteger)maximumNumberOfImages;
++(NSInteger)messageMaximumLength;
++(NSString*)messageServiceName;
++(NSInteger)messageURLLength;
 
 -(void)postMessage:(NSString*)message withImages:(NSArray*)images fromAccount:(ACAccount*)account;
 

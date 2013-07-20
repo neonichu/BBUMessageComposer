@@ -24,6 +24,29 @@
 		869DE37F179A847300E5AA9B /* DETweetGradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = 869DE37E179A847300E5AA9B /* DETweetGradientView.m */; };
 		869DE382179A853000E5AA9B /* BBUMessagePoster.m in Sources */ = {isa = PBXBuildFile; fileRef = 869DE381179A853000E5AA9B /* BBUMessagePoster.m */; };
 		869DE385179A9DDA00E5AA9B /* UIView+Geometry.m in Sources */ = {isa = PBXBuildFile; fileRef = 869DE384179A9DDA00E5AA9B /* UIView+Geometry.m */; };
+		869DE388179AA32A00E5AA9B /* TwitterMessagePoster.m in Sources */ = {isa = PBXBuildFile; fileRef = 869DE387179AA32A00E5AA9B /* TwitterMessagePoster.m */; };
+		869DE38A179AAD2300E5AA9B /* DETweetComposeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 869DE389179AAD2300E5AA9B /* DETweetComposeView.xib */; };
+		869DE38D179AADBD00E5AA9B /* DEEmbossedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 869DE38C179AADBD00E5AA9B /* DEEmbossedLabel.m */; };
+		869DE3A2179AAE0700E5AA9B /* DETweetAttachmentFrame.png in Resources */ = {isa = PBXBuildFile; fileRef = 869DE38E179AAE0700E5AA9B /* DETweetAttachmentFrame.png */; };
+		869DE3A3179AAE0700E5AA9B /* DETweetAttachmentFrame@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 869DE38F179AAE0700E5AA9B /* DETweetAttachmentFrame@2x.png */; };
+		869DE3A4179AAE0700E5AA9B /* DETweetCancelButtonLandscape.png in Resources */ = {isa = PBXBuildFile; fileRef = 869DE390179AAE0700E5AA9B /* DETweetCancelButtonLandscape.png */; };
+		869DE3A5179AAE0700E5AA9B /* DETweetCancelButtonLandscape@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 869DE391179AAE0700E5AA9B /* DETweetCancelButtonLandscape@2x.png */; };
+		869DE3A6179AAE0700E5AA9B /* DETweetCancelButtonPortrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 869DE392179AAE0700E5AA9B /* DETweetCancelButtonPortrait.png */; };
+		869DE3A7179AAE0700E5AA9B /* DETweetCancelButtonPortrait@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 869DE393179AAE0700E5AA9B /* DETweetCancelButtonPortrait@2x.png */; };
+		869DE3A8179AAE0700E5AA9B /* DETweetCardAccountLine.png in Resources */ = {isa = PBXBuildFile; fileRef = 869DE394179AAE0700E5AA9B /* DETweetCardAccountLine.png */; };
+		869DE3A9179AAE0700E5AA9B /* DETweetCardAccountLine@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 869DE395179AAE0700E5AA9B /* DETweetCardAccountLine@2x.png */; };
+		869DE3AA179AAE0700E5AA9B /* DETweetCardBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 869DE396179AAE0700E5AA9B /* DETweetCardBackground.png */; };
+		869DE3AB179AAE0700E5AA9B /* DETweetCardBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 869DE397179AAE0700E5AA9B /* DETweetCardBackground@2x.png */; };
+		869DE3AC179AAE0700E5AA9B /* DETweetCardHeaderLine.png in Resources */ = {isa = PBXBuildFile; fileRef = 869DE398179AAE0700E5AA9B /* DETweetCardHeaderLine.png */; };
+		869DE3AD179AAE0700E5AA9B /* DETweetCardHeaderLine@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 869DE399179AAE0700E5AA9B /* DETweetCardHeaderLine@2x.png */; };
+		869DE3AE179AAE0700E5AA9B /* DETweetPaperClip.png in Resources */ = {isa = PBXBuildFile; fileRef = 869DE39A179AAE0700E5AA9B /* DETweetPaperClip.png */; };
+		869DE3AF179AAE0700E5AA9B /* DETweetPaperClip@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 869DE39B179AAE0700E5AA9B /* DETweetPaperClip@2x.png */; };
+		869DE3B0179AAE0700E5AA9B /* DETweetSendButtonLandscape.png in Resources */ = {isa = PBXBuildFile; fileRef = 869DE39C179AAE0700E5AA9B /* DETweetSendButtonLandscape.png */; };
+		869DE3B1179AAE0700E5AA9B /* DETweetSendButtonLandscape@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 869DE39D179AAE0700E5AA9B /* DETweetSendButtonLandscape@2x.png */; };
+		869DE3B2179AAE0700E5AA9B /* DETweetSendButtonPortrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 869DE39E179AAE0700E5AA9B /* DETweetSendButtonPortrait.png */; };
+		869DE3B3179AAE0700E5AA9B /* DETweetSendButtonPortrait@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 869DE39F179AAE0700E5AA9B /* DETweetSendButtonPortrait@2x.png */; };
+		869DE3B4179AAE0700E5AA9B /* DETweetURLAttachment.png in Resources */ = {isa = PBXBuildFile; fileRef = 869DE3A0179AAE0700E5AA9B /* DETweetURLAttachment.png */; };
+		869DE3B5179AAE0700E5AA9B /* DETweetURLAttachment@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 869DE3A1179AAE0700E5AA9B /* DETweetURLAttachment@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +79,31 @@
 		869DE381179A853000E5AA9B /* BBUMessagePoster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBUMessagePoster.m; sourceTree = "<group>"; };
 		869DE383179A9DDA00E5AA9B /* UIView+Geometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Geometry.h"; sourceTree = "<group>"; };
 		869DE384179A9DDA00E5AA9B /* UIView+Geometry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Geometry.m"; sourceTree = "<group>"; };
+		869DE386179AA32A00E5AA9B /* TwitterMessagePoster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterMessagePoster.h; sourceTree = "<group>"; };
+		869DE387179AA32A00E5AA9B /* TwitterMessagePoster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterMessagePoster.m; sourceTree = "<group>"; };
+		869DE389179AAD2300E5AA9B /* DETweetComposeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DETweetComposeView.xib; sourceTree = "<group>"; };
+		869DE38B179AADBD00E5AA9B /* DEEmbossedLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEEmbossedLabel.h; sourceTree = "<group>"; };
+		869DE38C179AADBD00E5AA9B /* DEEmbossedLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEEmbossedLabel.m; sourceTree = "<group>"; };
+		869DE38E179AAE0700E5AA9B /* DETweetAttachmentFrame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DETweetAttachmentFrame.png; sourceTree = "<group>"; };
+		869DE38F179AAE0700E5AA9B /* DETweetAttachmentFrame@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DETweetAttachmentFrame@2x.png"; sourceTree = "<group>"; };
+		869DE390179AAE0700E5AA9B /* DETweetCancelButtonLandscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DETweetCancelButtonLandscape.png; sourceTree = "<group>"; };
+		869DE391179AAE0700E5AA9B /* DETweetCancelButtonLandscape@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DETweetCancelButtonLandscape@2x.png"; sourceTree = "<group>"; };
+		869DE392179AAE0700E5AA9B /* DETweetCancelButtonPortrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DETweetCancelButtonPortrait.png; sourceTree = "<group>"; };
+		869DE393179AAE0700E5AA9B /* DETweetCancelButtonPortrait@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DETweetCancelButtonPortrait@2x.png"; sourceTree = "<group>"; };
+		869DE394179AAE0700E5AA9B /* DETweetCardAccountLine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DETweetCardAccountLine.png; sourceTree = "<group>"; };
+		869DE395179AAE0700E5AA9B /* DETweetCardAccountLine@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DETweetCardAccountLine@2x.png"; sourceTree = "<group>"; };
+		869DE396179AAE0700E5AA9B /* DETweetCardBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DETweetCardBackground.png; sourceTree = "<group>"; };
+		869DE397179AAE0700E5AA9B /* DETweetCardBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DETweetCardBackground@2x.png"; sourceTree = "<group>"; };
+		869DE398179AAE0700E5AA9B /* DETweetCardHeaderLine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DETweetCardHeaderLine.png; sourceTree = "<group>"; };
+		869DE399179AAE0700E5AA9B /* DETweetCardHeaderLine@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DETweetCardHeaderLine@2x.png"; sourceTree = "<group>"; };
+		869DE39A179AAE0700E5AA9B /* DETweetPaperClip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DETweetPaperClip.png; sourceTree = "<group>"; };
+		869DE39B179AAE0700E5AA9B /* DETweetPaperClip@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DETweetPaperClip@2x.png"; sourceTree = "<group>"; };
+		869DE39C179AAE0700E5AA9B /* DETweetSendButtonLandscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DETweetSendButtonLandscape.png; sourceTree = "<group>"; };
+		869DE39D179AAE0700E5AA9B /* DETweetSendButtonLandscape@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DETweetSendButtonLandscape@2x.png"; sourceTree = "<group>"; };
+		869DE39E179AAE0700E5AA9B /* DETweetSendButtonPortrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DETweetSendButtonPortrait.png; sourceTree = "<group>"; };
+		869DE39F179AAE0700E5AA9B /* DETweetSendButtonPortrait@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DETweetSendButtonPortrait@2x.png"; sourceTree = "<group>"; };
+		869DE3A0179AAE0700E5AA9B /* DETweetURLAttachment.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DETweetURLAttachment.png; sourceTree = "<group>"; };
+		869DE3A1179AAE0700E5AA9B /* DETweetURLAttachment@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DETweetURLAttachment@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +161,8 @@
 				869DE36D179A80F000E5AA9B /* BBUMessageComposeViewController.m */,
 				869DE380179A853000E5AA9B /* BBUMessagePoster.h */,
 				869DE381179A853000E5AA9B /* BBUMessagePoster.m */,
+				869DE38B179AADBD00E5AA9B /* DEEmbossedLabel.h */,
+				869DE38C179AADBD00E5AA9B /* DEEmbossedLabel.m */,
 				869DE37A179A840900E5AA9B /* DERuledView.h */,
 				869DE37B179A840900E5AA9B /* DERuledView.m */,
 				869DE37D179A847300E5AA9B /* DETweetGradientView.h */,
@@ -141,6 +191,27 @@
 				869DE35E179A7A5800E5AA9B /* Default.png */,
 				869DE360179A7A5800E5AA9B /* Default@2x.png */,
 				869DE362179A7A5800E5AA9B /* Default-568h@2x.png */,
+				869DE38E179AAE0700E5AA9B /* DETweetAttachmentFrame.png */,
+				869DE38F179AAE0700E5AA9B /* DETweetAttachmentFrame@2x.png */,
+				869DE390179AAE0700E5AA9B /* DETweetCancelButtonLandscape.png */,
+				869DE391179AAE0700E5AA9B /* DETweetCancelButtonLandscape@2x.png */,
+				869DE392179AAE0700E5AA9B /* DETweetCancelButtonPortrait.png */,
+				869DE393179AAE0700E5AA9B /* DETweetCancelButtonPortrait@2x.png */,
+				869DE394179AAE0700E5AA9B /* DETweetCardAccountLine.png */,
+				869DE395179AAE0700E5AA9B /* DETweetCardAccountLine@2x.png */,
+				869DE396179AAE0700E5AA9B /* DETweetCardBackground.png */,
+				869DE397179AAE0700E5AA9B /* DETweetCardBackground@2x.png */,
+				869DE398179AAE0700E5AA9B /* DETweetCardHeaderLine.png */,
+				869DE399179AAE0700E5AA9B /* DETweetCardHeaderLine@2x.png */,
+				869DE389179AAD2300E5AA9B /* DETweetComposeView.xib */,
+				869DE39A179AAE0700E5AA9B /* DETweetPaperClip.png */,
+				869DE39B179AAE0700E5AA9B /* DETweetPaperClip@2x.png */,
+				869DE39C179AAE0700E5AA9B /* DETweetSendButtonLandscape.png */,
+				869DE39D179AAE0700E5AA9B /* DETweetSendButtonLandscape@2x.png */,
+				869DE39E179AAE0700E5AA9B /* DETweetSendButtonPortrait.png */,
+				869DE39F179AAE0700E5AA9B /* DETweetSendButtonPortrait@2x.png */,
+				869DE3A0179AAE0700E5AA9B /* DETweetURLAttachment.png */,
+				869DE3A1179AAE0700E5AA9B /* DETweetURLAttachment@2x.png */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -150,6 +221,8 @@
 			children = (
 				869DE35B179A7A5800E5AA9B /* BBUAppDelegate.h */,
 				869DE35C179A7A5800E5AA9B /* BBUAppDelegate.m */,
+				869DE386179AA32A00E5AA9B /* TwitterMessagePoster.h */,
+				869DE387179AA32A00E5AA9B /* TwitterMessagePoster.m */,
 				869DE383179A9DDA00E5AA9B /* UIView+Geometry.h */,
 				869DE384179A9DDA00E5AA9B /* UIView+Geometry.m */,
 			);
@@ -211,6 +284,27 @@
 				869DE35F179A7A5800E5AA9B /* Default.png in Resources */,
 				869DE361179A7A5800E5AA9B /* Default@2x.png in Resources */,
 				869DE363179A7A5800E5AA9B /* Default-568h@2x.png in Resources */,
+				869DE38A179AAD2300E5AA9B /* DETweetComposeView.xib in Resources */,
+				869DE3A2179AAE0700E5AA9B /* DETweetAttachmentFrame.png in Resources */,
+				869DE3A3179AAE0700E5AA9B /* DETweetAttachmentFrame@2x.png in Resources */,
+				869DE3A4179AAE0700E5AA9B /* DETweetCancelButtonLandscape.png in Resources */,
+				869DE3A5179AAE0700E5AA9B /* DETweetCancelButtonLandscape@2x.png in Resources */,
+				869DE3A6179AAE0700E5AA9B /* DETweetCancelButtonPortrait.png in Resources */,
+				869DE3A7179AAE0700E5AA9B /* DETweetCancelButtonPortrait@2x.png in Resources */,
+				869DE3A8179AAE0700E5AA9B /* DETweetCardAccountLine.png in Resources */,
+				869DE3A9179AAE0700E5AA9B /* DETweetCardAccountLine@2x.png in Resources */,
+				869DE3AA179AAE0700E5AA9B /* DETweetCardBackground.png in Resources */,
+				869DE3AB179AAE0700E5AA9B /* DETweetCardBackground@2x.png in Resources */,
+				869DE3AC179AAE0700E5AA9B /* DETweetCardHeaderLine.png in Resources */,
+				869DE3AD179AAE0700E5AA9B /* DETweetCardHeaderLine@2x.png in Resources */,
+				869DE3AE179AAE0700E5AA9B /* DETweetPaperClip.png in Resources */,
+				869DE3AF179AAE0700E5AA9B /* DETweetPaperClip@2x.png in Resources */,
+				869DE3B0179AAE0700E5AA9B /* DETweetSendButtonLandscape.png in Resources */,
+				869DE3B1179AAE0700E5AA9B /* DETweetSendButtonLandscape@2x.png in Resources */,
+				869DE3B2179AAE0700E5AA9B /* DETweetSendButtonPortrait.png in Resources */,
+				869DE3B3179AAE0700E5AA9B /* DETweetSendButtonPortrait@2x.png in Resources */,
+				869DE3B4179AAE0700E5AA9B /* DETweetURLAttachment.png in Resources */,
+				869DE3B5179AAE0700E5AA9B /* DETweetURLAttachment@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -231,6 +325,8 @@
 				869DE37F179A847300E5AA9B /* DETweetGradientView.m in Sources */,
 				869DE382179A853000E5AA9B /* BBUMessagePoster.m in Sources */,
 				869DE385179A9DDA00E5AA9B /* UIView+Geometry.m in Sources */,
+				869DE388179AA32A00E5AA9B /* TwitterMessagePoster.m in Sources */,
+				869DE38D179AADBD00E5AA9B /* DEEmbossedLabel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -87,4 +87,6 @@ typedef void (^BBUMessageComposeViewControllerCompletionHandler)(BBUMessageCompo
 // to be called on any particular thread.
 @property (nonatomic, copy) BBUMessageComposeViewControllerCompletionHandler completionHandler;
 
+@property (nonatomic, strong) Class posterClass;
+
 @end

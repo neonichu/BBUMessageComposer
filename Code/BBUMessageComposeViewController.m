@@ -16,8 +16,8 @@
 //  LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
-#import "BBUMessagePoster.h"
 #import "BBUMessageComposeViewController.h"
+#import "BBUMessagePoster.h"
 #import "DETweetSheetCardView.h"
 #import "DETweetTextView.h"
 #import "DETweetGradientView.h"
@@ -37,7 +37,7 @@
 @property (nonatomic, retain) DETweetGradientView *gradientView;
 @property (nonatomic, retain) UIPickerView *accountPickerView;
 @property (nonatomic, retain) UIPopoverController *accountPickerPopoverController;
-@property (nonatomic, retain) id twitterAccount;  // iOS 5 use only.
+@property (nonatomic, retain) id serviceAccount;
 
 - (void)tweetComposeViewControllerInit;
 - (void)updateFramesForOrientation:(UIInterfaceOrientation)interfaceOrientation;
@@ -46,10 +46,10 @@
 - (void)updateCharacterCount;
 - (NSInteger)attachmentsCount;
 - (void)updateAttachments;
-- (void)selectTwitterAccount;
-- (void)displayNoTwitterAccountsAlert;
+- (void)selectAccount;
+- (void)displayNoAccountsAlert;
 - (void)presentAccountPicker;
-- (void)checkTwitterCredentials;
+- (void)checkCredentials;
 - (UIImage*)captureScreen;
 
 @end
@@ -57,49 +57,10 @@
 
 @implementation BBUMessageComposeViewController
 
-// IBOutlets
-@synthesize cardView = _cardView;
-@synthesize titleLabel = _titleLabel;
-@synthesize cancelButton = _cancelButton;
-@synthesize sendButton = _sendButton;
-@synthesize cardHeaderLineView = _cardHeaderLineView;
-@synthesize textView = _textView;
-@synthesize textViewContainer = _textViewContainer;
-@synthesize paperClipView = _paperClipView;
-@synthesize attachment1FrameView = _attachment1FrameView;
-@synthesize attachment2FrameView = _attachment2FrameView;
-@synthesize attachment3FrameView = _attachment3FrameView;
-@synthesize attachment1ImageView = _attachment1ImageView;
-@synthesize attachment2ImageView = _attachment2ImageView;
-@synthesize attachment3ImageView = _attachment3ImageView;
-@synthesize characterCountLabel = _characterCountLabel;
-
-// Public
-@synthesize completionHandler = _completionHandler;
-
-// Private
-@synthesize text = _text;
-@synthesize images = _images;
-@synthesize urls = _urls;
-@synthesize attachmentFrameViews = _attachmentFrameViews;
-@synthesize attachmentImageViews = _attachmentImageViews;
-@synthesize previousStatusBarStyle = _previousStatusBarStyle;
-@synthesize fromViewController = _fromViewController;
-@synthesize backgroundImageView = _backgroundImageView;
-@synthesize gradientView = _gradientView;
-@synthesize accountPickerView = _accountPickerView;
-@synthesize accountPickerPopoverController = _accountPickerPopoverController;
-@synthesize twitterAccount = _twitterAccount;
-
 enum {
     BBUMessageComposeViewControllerNoAccountsAlert = 1,
     BBUMessageComposeViewControllerCannotSendAlert
 };
-
-NSInteger const DETweetMaxLength = 140;
-NSInteger const DETweetURLLength = 20;  // https://dev.twitter.com/docs/tco-url-wrapper
-NSInteger const DETweetMaxImages = 1;  // We'll get this dynamically later, but not today.
-static NSString * const DETweetLastAccountIdentifier = @"DETweetLastAccountIdentifier";
 
 #define degreesToRadians(x) (M_PI * x / 180.0f)
 
@@ -111,30 +72,6 @@ static NSString * const DETweetLastAccountIdentifier = @"DETweetLastAccountIdent
     return NO;
 }
 
-+ (void)logout
-{
-}
-
-+ (void)displayNoTwitterAccountsAlert
-// We have an instance method that's identical to this. Make sure it stays identical.
-// This duplicates the message and buttons displayed in Apple's TWTweetComposeViewController alert message.
-{
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"No Twitter Accounts", @"")
-                                                        message:NSLocalizedString(@"There are no Twitter accounts configured. You can add or create a Twitter account in Settings.", @"")
-                                                       delegate:self
-                                              cancelButtonTitle:NSLocalizedString(@"OK", @"")
-                                              otherButtonTitles:nil];
-    alertView.tag = BBUMessageComposeViewControllerNoAccountsAlert;
-    [alertView show];
-}
-
-
-+ (NSArray *)systemTwitterAccounts
-{
-    ACAccountStore *accountStore = [[ACAccountStore alloc] init];
-    ACAccountType *twitterAccountType = [accountStore accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
-    return [accountStore accountsWithAccountType:twitterAccountType];
-}
 
 - (UIImage *) captureScreen {
     UIWindow *keyWindow = [[UIApplication sharedApplication] keyWindow];
@@ -184,6 +121,11 @@ static NSString * const DETweetLastAccountIdentifier = @"DETweetLastAccountIdent
 
 #pragma mark - Setup & Teardown
 
+
+-(id)init {
+    self = [self initWithNibName:@"DETweetComposeView" bundle:nil];
+    return self;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -261,6 +203,8 @@ static NSString * const DETweetLastAccountIdentifier = @"DETweetLastAccountIdent
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+    NSAssert(self.posterClass, @"No message poster class defined.");
 
     // Take a snapshot of the current view, and make that our background after our view animates into place.
     // This only works if our orientation is the same as the presenting view.
@@ -294,15 +238,15 @@ static NSString * const DETweetLastAccountIdentifier = @"DETweetLastAccountIdent
     
     [self updateFramesForOrientation:self.interfaceOrientation];
     
-    [self checkTwitterCredentials];
+    [self checkCredentials];
     
-    [self selectTwitterAccount];  // Set or verify our default account.
+    [self selectAccount];  // Set or verify our default account.
     
     // Like TWTweetComposeViewController, we'll let the user change the account only if
     // we're in portrait orientation on iPhone. iPad can do it in any orientation.
-    if ([[BBUMessagePoster accounts] count] > 1
+    if ([[self.posterClass accounts] count] > 1
         && ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad || UIInterfaceOrientationIsPortrait(self.interfaceOrientation)) ) {
-        self.textView.accountName = ((ACAccount *)self.twitterAccount).accountDescription;
+        self.textView.accountName = ((ACAccount *)self.serviceAccount).accountDescription;
     }
     else {
         self.textView.accountName = nil;
@@ -389,7 +333,7 @@ static NSString * const DETweetLastAccountIdentifier = @"DETweetLastAccountIdent
     //  _text
     //  _images
     //  _urls
-    //  _twitterAccount
+    //  _serviceAccount
     
     // Save the text.
     self.text = self.textView.text;
@@ -451,7 +395,7 @@ static NSString * const DETweetLastAccountIdentifier = @"DETweetLastAccountIdent
         return NO;
     }
     
-    if ([self.images count] >= DETweetMaxImages) {
+    if ([self.images count] >= [self.posterClass maximumNumberOfImages]) {
         return NO;
     }
     
@@ -459,7 +403,7 @@ static NSString * const DETweetLastAccountIdentifier = @"DETweetLastAccountIdent
         return NO;  // Only three allowed.
     }
     
-    if (([self charactersAvailable] - (DETweetURLLength + 1)) < 0) {  // Add one for the space character.
+    if (([self charactersAvailable] - ([self.posterClass messageMaximumLength] + 1)) < 0) {  // Add one for the space character.
         return NO;
     }
     
@@ -502,7 +446,7 @@ static NSString * const DETweetLastAccountIdentifier = @"DETweetLastAccountIdent
         return NO;  // Only three allowed.
     }
     
-    if (([self charactersAvailable] - (DETweetURLLength + 1)) < 0) {  // Add one for the space character.
+    if (([self charactersAvailable] - ([self.posterClass messageMaximumLength] + 1)) < 0) {  // Add one for the space character.
         return NO;
     }
     
@@ -637,12 +581,12 @@ static NSString * const DETweetLastAccountIdentifier = @"DETweetLastAccountIdent
 
 - (NSInteger)charactersAvailable
 {
-    NSInteger available = DETweetMaxLength;
-    available -= (DETweetURLLength + 1) * [self.images count];
-    available -= (DETweetURLLength + 1) * [self.urls count];
+    NSInteger available = [self.posterClass messageMaximumLength];
+    available -= ([self.posterClass messageURLLength] + 1) * [self.images count];
+    available -= ([self.posterClass messageURLLength] + 1) * [self.urls count];
     available -= [self.textView.text length];
     
-    if ( (available < DETweetMaxLength) && ([self.textView.text length] == 0) ) {
+    if ( (available < [self.posterClass messageMaximumLength]) && ([self.textView.text length] == 0) ) {
         available += 1;  // The space we added for the first URL isn't needed.
     }
     
@@ -658,7 +602,7 @@ static NSString * const DETweetLastAccountIdentifier = @"DETweetLastAccountIdent
     
     if (available >= 0) {
         self.characterCountLabel.textColor = [UIColor grayColor];
-        self.sendButton.enabled = (available != DETweetMaxLength);  // At least one character is required.
+        self.sendButton.enabled = (available != [self.posterClass messageMaximumLength]);  // At least one character is required.
     }
     else {
         self.characterCountLabel.textColor = [UIColor colorWithRed:0.64f green:0.32f blue:0.32f alpha:1.0f];
@@ -715,21 +659,21 @@ static NSString * const DETweetLastAccountIdentifier = @"DETweetLastAccountIdent
 }
 
 
-- (void)selectTwitterAccount
-// Picks the iOS 5 Twitter account to use.
+- (void)selectAccount
+// Picks the account to use.
 // If one is already selected, makes sure it's still valid.
 // If not, another is picked.
 {
-    NSArray *accounts = [BBUMessagePoster accounts];
+    NSArray *accounts = [self.posterClass accounts];
     
     if ([accounts count] == 0) {
-        self.twitterAccount = nil;
+        self.serviceAccount = nil;
         return;
     }
     
-    NSString *accountIdentifier = [[NSUserDefaults standardUserDefaults] stringForKey:DETweetLastAccountIdentifier];
-    if (self.twitterAccount) {
-        accountIdentifier = ((ACAccount *)self.twitterAccount).identifier;
+    NSString *accountIdentifier = [[NSUserDefaults standardUserDefaults] stringForKey:[self.posterClass lastAccountIdentifier]];
+    if (self.serviceAccount) {
+        accountIdentifier = ((ACAccount *)self.serviceAccount).identifier;
     }
     
     if ([accountIdentifier length] > 0) {
@@ -738,27 +682,27 @@ static NSString * const DETweetLastAccountIdentifier = @"DETweetLastAccountIdent
             return *stop;
         }];
         if (index != NSNotFound) {
-            self.twitterAccount = [accounts objectAtIndex:index];
+            self.serviceAccount = [accounts objectAtIndex:index];
         }
         else {
-            self.twitterAccount = nil;  // Clear out the invalid account.
+            self.serviceAccount = nil;  // Clear out the invalid account.
         }
     }
     
-    if (self.twitterAccount == nil) {
-        self.twitterAccount = [accounts objectAtIndex:0];  // Safe, since we tested for [accounts count] == 0 above.
+    if (self.serviceAccount == nil) {
+        self.serviceAccount = [accounts objectAtIndex:0];  // Safe, since we tested for [accounts count] == 0 above.
     }
     
-    [[NSUserDefaults standardUserDefaults] setObject:((ACAccount *)self.twitterAccount).identifier forKey:DETweetLastAccountIdentifier];
+    [[NSUserDefaults standardUserDefaults] setObject:((ACAccount *)self.serviceAccount).identifier forKey:[self.posterClass lastAccountIdentifier]];
 }
 
 
-- (void)displayNoTwitterAccountsAlert
+- (void)displayNoAccountsAlert
 // A private instance version of the class method with the same name.
 // This duplicates the message and buttons displayed in Apple's TWTweetComposeViewController alert message.
 {
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"No Twitter Accounts", @"")
-                                                        message:NSLocalizedString(@"There are no Twitter accounts configured. You can add or create a Twitter account in Settings.", @"")
+    NSString* service = [self.posterClass messageServiceName];
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:NSLocalizedString(@"No %@ Accounts", @""), service] message:[NSString stringWithFormat:NSLocalizedString(@"There are no %@ accounts configured. You can add or create a %@ account in Settings.", @""), service, service]
                                                        delegate:self
                                               cancelButtonTitle:NSLocalizedString(@"OK", @"")
                                               otherButtonTitles:nil];
@@ -788,7 +732,7 @@ static NSString * const DETweetLastAccountIdentifier = @"DETweetLastAccountIdent
         if (self.accountPickerPopoverController == nil) {
             BBUAccountSelectorViewController *contentViewController = [[BBUAccountSelectorViewController alloc] init];
             contentViewController.delegate = self;
-            contentViewController.selectedAccount = self.twitterAccount;
+            contentViewController.selectedAccount = self.serviceAccount;
             self.accountPickerPopoverController = [[UIPopoverController alloc] initWithContentViewController:contentViewController];
             self.accountPickerPopoverController.delegate = self;
         }
@@ -798,19 +742,10 @@ static NSString * const DETweetLastAccountIdentifier = @"DETweetLastAccountIdent
 }
 
 
-- (void)checkTwitterCredentials
+- (void)checkCredentials
 {
-    // Try using iOS5 Twitter credentials
-    if (true /*[[self class] canAccessTwitterAccounts]*/) {
-        ACAccountStore *accountStore = [[ACAccountStore alloc] init];
-        ACAccountType *twitterAccountType = [accountStore accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
-        NSArray *twitterAccounts = [accountStore accountsWithAccountType:twitterAccountType];
-        if ([twitterAccounts count] < 1) {
-            [self displayNoTwitterAccountsAlert];
-        }
-    }
-    else {
-        [self performSelector:@selector(dismissModalViewControllerAnimated:) withObject:self afterDelay:1.0f];
+    if ([self.posterClass accounts].count < 1) {
+        [self displayNoAccountsAlert];
     }
 }
 
@@ -841,7 +776,7 @@ static NSString * const DETweetLastAccountIdentifier = @"DETweetLastAccountIdent
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
 {
-    NSArray *accounts = [BBUMessagePoster accounts];
+    NSArray *accounts = [self.posterClass accounts];
     return [accounts count];
 }
 
@@ -850,7 +785,7 @@ static NSString * const DETweetLastAccountIdentifier = @"DETweetLastAccountIdent
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
-    ACAccount *account = [[BBUMessagePoster accounts] objectAtIndex:row];
+    ACAccount *account = [[self.posterClass accounts] objectAtIndex:row];
     
     if ([account.accountDescription isEqualToString:@"Primary Account"]) {
         [self.accountPickerView selectRow:row inComponent:0 animated:NO];
@@ -862,8 +797,8 @@ static NSString * const DETweetLastAccountIdentifier = @"DETweetLastAccountIdent
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
-    self.twitterAccount = [[BBUMessagePoster accounts] objectAtIndex:row];
-    self.textView.accountName = ((ACAccount *)self.twitterAccount).accountDescription;
+    self.serviceAccount = [[self.posterClass accounts] objectAtIndex:row];
+    self.textView.accountName = ((ACAccount *)self.serviceAccount).accountDescription;
 }
 
 
@@ -872,8 +807,8 @@ static NSString * const DETweetLastAccountIdentifier = @"DETweetLastAccountIdent
 
 - (void)tweetAccountSelectorViewController:(BBUAccountSelectorViewController *)viewController didSelectAccount:(ACAccount *)account
 {
-    self.twitterAccount = account;
-    self.textView.accountName = ((ACAccount *)self.twitterAccount).accountDescription;
+    self.serviceAccount = account;
+    self.textView.accountName = ((ACAccount *)self.serviceAccount).accountDescription;
     [self.accountPickerPopoverController dismissPopoverAnimated:YES];
 }
 
@@ -882,8 +817,8 @@ static NSString * const DETweetLastAccountIdentifier = @"DETweetLastAccountIdent
 
 - (void)messageFailed:(BBUMessagePoster *)poster
 {
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Cannot Send Tweet", @"")
-                                                        message:[NSString stringWithFormat:NSLocalizedString(@"The tweet, \"%@\" cannot be sent because the connection to Twitter failed.", @""), self.textView.text]
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Cannot Send Message", @"")
+                                                        message:[NSString stringWithFormat:NSLocalizedString(@"The tweet, \"%@\" cannot be sent because the connection to %@ failed.", @""), self.textView.text, [self.posterClass messageServiceName]]
                                                        delegate:self
                                               cancelButtonTitle:NSLocalizedString(@"Cancel", @"")
                                               otherButtonTitles:NSLocalizedString(@"Try Again", @""), nil];
@@ -899,7 +834,7 @@ static NSString * const DETweetLastAccountIdentifier = @"DETweetLastAccountIdent
     [self dismissViewControllerAnimated:YES completion:NULL];
     
     [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Cannot Send Tweet", @"")
-                                message:NSLocalizedString(@"Unable to login to Twitter with existing credentials. Try again with new credentials.", @"")
+                                message:[NSString stringWithFormat:NSLocalizedString(@"Unable to login to %@ with existing credentials. Try again with new credentials.", @""), [self.posterClass messageServiceName]]
                                delegate:nil
                       cancelButtonTitle:NSLocalizedString(@"OK", @"")
                       otherButtonTitles:nil] show];
@@ -942,9 +877,9 @@ static NSString * const DETweetLastAccountIdentifier = @"DETweetLastAccountIdent
         tweet = [tweet stringByAppendingString:urlString];
     }
     
-    BBUMessagePoster *poster = [[BBUMessagePoster alloc] init];
+    BBUMessagePoster *poster = [[self.posterClass alloc] init];
     poster.delegate = self;
-    [poster postMessage:tweet withImages:self.images fromAccount:self.twitterAccount];
+    [poster postMessage:tweet withImages:self.images fromAccount:self.serviceAccount];
 }
 
 

@@ -8,6 +8,7 @@
 
 #import "BBUAppDelegate.h"
 #import "BBUMessageComposeViewController.h"
+#import "TwitterMessagePoster.h"
 #import "UIView+Geometry.h"
 
 @implementation BBUAppDelegate
@@ -34,6 +35,7 @@
 - (void)openMessageComposer
 {
     BBUMessageComposeViewController* messageComposer = [BBUMessageComposeViewController new];
+    messageComposer.posterClass = [TwitterMessagePoster class];
     [self.window.rootViewController presentViewController:messageComposer animated:YES completion:NULL];
 }
 
