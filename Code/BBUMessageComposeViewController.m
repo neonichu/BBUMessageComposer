@@ -205,6 +205,7 @@ enum {
     [super viewWillAppear:animated];
     
     NSAssert(self.posterClass, @"No message poster class defined.");
+    self.titleLabel.text = [self.posterClass messageName];
 
     // Take a snapshot of the current view, and make that our background after our view animates into place.
     // This only works if our orientation is the same as the presenting view.
@@ -817,8 +818,7 @@ enum {
 
 - (void)messageFailed:(BBUMessagePoster *)poster
 {
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Cannot Send Message", @"")
-                                                        message:[NSString stringWithFormat:NSLocalizedString(@"The tweet, \"%@\" cannot be sent because the connection to %@ failed.", @""), self.textView.text, [self.posterClass messageServiceName]]
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:NSLocalizedString(@"Cannot Send %@", @""), [self.posterClass messageName]] message:[NSString stringWithFormat:NSLocalizedString(@"The tweet, \"%@\" cannot be sent because the connection to %@ failed.", @""), self.textView.text, [self.posterClass messageServiceName]]
                                                        delegate:self
                                               cancelButtonTitle:NSLocalizedString(@"Cancel", @"")
                                               otherButtonTitles:NSLocalizedString(@"Try Again", @""), nil];
@@ -833,8 +833,7 @@ enum {
 {
     [self dismissViewControllerAnimated:YES completion:NULL];
     
-    [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Cannot Send Tweet", @"")
-                                message:[NSString stringWithFormat:NSLocalizedString(@"Unable to login to %@ with existing credentials. Try again with new credentials.", @""), [self.posterClass messageServiceName]]
+    [[[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:NSLocalizedString(@"Cannot Send %@", @""), [self.posterClass messageName]] message:[NSString stringWithFormat:NSLocalizedString(@"Unable to login to %@ with existing credentials. Try again with new credentials.", @""), [self.posterClass messageServiceName]]
                                delegate:nil
                       cancelButtonTitle:NSLocalizedString(@"OK", @"")
                       otherButtonTitles:nil] show];

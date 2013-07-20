@@ -26,6 +26,10 @@
     return 0;
 }
 
++(NSString *)messageName {
+    return nil;
+}
+
 +(NSString *)messageServiceName {
     return nil;
 }

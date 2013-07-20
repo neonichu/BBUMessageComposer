@@ -29,6 +29,7 @@
 +(NSString*)lastAccountIdentifier;
 +(NSInteger)maximumNumberOfImages;
 +(NSInteger)messageMaximumLength;
++(NSString*)messageName;
 +(NSString*)messageServiceName;
 +(NSInteger)messageURLLength;
 

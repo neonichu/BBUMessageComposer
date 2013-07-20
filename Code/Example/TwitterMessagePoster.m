@@ -28,6 +28,10 @@
     return 140;
 }
 
++(NSString *)messageName {
+    return @"Tweet";
+}
+
 +(NSString *)messageServiceName {
     return @"Twitter";
 }
