@@ -58,6 +58,8 @@ static NSString * const TWStatusKey                 = @"status";
 }
 
 -(void)postMessage:(NSString *)message withImages:(NSArray *)images fromAccount:(ACAccount *)account {
+    NSAssert(account, @"No account specified");
+    
     SLRequest* request = nil;
     
     if (images.count > 0) {
@@ -81,6 +83,8 @@ static NSString * const TWStatusKey                 = @"status";
                                                URL:[NSURL URLWithString:TWPostURLString]
                                         parameters:parameters];
     }
+    
+    request.account = account;
     
     [request performRequestWithHandler:^(NSData *responseData, NSHTTPURLResponse *urlResponse, NSError *error) {
         NSInteger statusCode = urlResponse.statusCode;
