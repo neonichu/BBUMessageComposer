@@ -84,6 +84,7 @@ static NSString * const TWStatusKey                 = @"status";
                                         parameters:parameters];
     }
     
+    account.accountType = [[ACAccountStore new] accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
     request.account = account;
     
     [request performRequestWithHandler:^(NSData *responseData, NSHTTPURLResponse *urlResponse, NSError *error) {
