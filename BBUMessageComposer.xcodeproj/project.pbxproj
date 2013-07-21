@@ -47,6 +47,7 @@
 		869DE3B3179AAE0700E5AA9B /* DETweetSendButtonPortrait@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 869DE39F179AAE0700E5AA9B /* DETweetSendButtonPortrait@2x.png */; };
 		869DE3B4179AAE0700E5AA9B /* DETweetURLAttachment.png in Resources */ = {isa = PBXBuildFile; fileRef = 869DE3A0179AAE0700E5AA9B /* DETweetURLAttachment.png */; };
 		869DE3B5179AAE0700E5AA9B /* DETweetURLAttachment@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 869DE3A1179AAE0700E5AA9B /* DETweetURLAttachment@2x.png */; };
+		869DE3B9179AB71600E5AA9B /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 869DE3B8179AB71600E5AA9B /* Social.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -104,6 +105,7 @@
 		869DE39F179AAE0700E5AA9B /* DETweetSendButtonPortrait@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DETweetSendButtonPortrait@2x.png"; sourceTree = "<group>"; };
 		869DE3A0179AAE0700E5AA9B /* DETweetURLAttachment.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DETweetURLAttachment.png; sourceTree = "<group>"; };
 		869DE3A1179AAE0700E5AA9B /* DETweetURLAttachment@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DETweetURLAttachment@2x.png"; sourceTree = "<group>"; };
+		869DE3B8179AB71600E5AA9B /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				869DE3B9179AB71600E5AA9B /* Social.framework in Frameworks */,
 				869DE373179A824F00E5AA9B /* Accounts.framework in Frameworks */,
 				869DE34D179A7A5800E5AA9B /* UIKit.framework in Frameworks */,
 				869DE34F179A7A5800E5AA9B /* Foundation.framework in Frameworks */,
@@ -146,6 +149,7 @@
 				869DE372179A824F00E5AA9B /* Accounts.framework */,
 				869DE350179A7A5800E5AA9B /* CoreGraphics.framework */,
 				869DE34E179A7A5800E5AA9B /* Foundation.framework */,
+				869DE3B8179AB71600E5AA9B /* Social.framework */,
 				869DE34C179A7A5800E5AA9B /* UIKit.framework */,
 			);
 			name = Frameworks;
