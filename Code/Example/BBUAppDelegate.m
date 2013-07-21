@@ -20,6 +20,7 @@
     self.window.rootViewController = [UIViewController new];
     
     UIButton* button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    button.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin;
     button.width = 200.0;
     button.height = 44.0;
     button.x = (self.window.width - button.width) / 2.0;
