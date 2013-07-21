@@ -4,7 +4,7 @@ A look-alike of the iOS 5/6 *TWTweetComposeViewController*, which can be used to
 
 ---
 
-Boris Bügling <boris@buegling.com>
+Boris Bügling (<boris@buegling.com>)
 
 
 [1]: https://github.com/doubleencore/DETweetComposeViewController
