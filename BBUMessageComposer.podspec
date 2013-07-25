@@ -10,6 +10,6 @@ Pod::Spec.new do |s|
   s.public_header_files = 'Code/{BBUAccountSelectorViewController,BBUMessageComposer,BBUMessageComposeViewController,BBUMessagePoster}.h'
   s.source_files = 'Code/*.{h,m}'
   s.resources = 'Resources/*.xib', 'Resources/DETweet*.png'
-  s.frameworks = 'UIKit'
+  s.frameworks = 'Accounts', 'UIKit'
   s.requires_arc = true
 end
