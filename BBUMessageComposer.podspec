@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'BBUMessageComposer'
-  s.version      = '0.0.2'
+  s.version      = '0.0.3'
   s.summary      = 'A look-alike of the iOS 5/6 TWTweetComposeViewController, which can be used to send messages of any kind.'
   s.homepage     = 'https://github.com/neonichu/BBUMessageComposer'
   s.license      = {:type => 'MIT', :file => 'LICENSE'}
