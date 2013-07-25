@@ -57,7 +57,10 @@ static NSString * const TWStatusKey                 = @"status";
     }
 }
 
--(void)postMessage:(NSString *)message withImages:(NSArray *)images fromAccount:(ACAccount *)account {
+-(void)postMessage:(NSString *)message
+        withImages:(NSArray *)images
+       fromAccount:(ACAccount *)account
+          userInfo:(NSDictionary *)userInfo {
     NSAssert(account, @"No account specified");
     
     SLRequest* request = nil;
