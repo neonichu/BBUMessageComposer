@@ -88,5 +88,6 @@ typedef void (^BBUMessageComposeViewControllerCompletionHandler)(BBUMessageCompo
 @property (nonatomic, copy) BBUMessageComposeViewControllerCompletionHandler completionHandler;
 
 @property (nonatomic, strong) Class posterClass;
+@property (nonatomic, strong) NSDictionary* userInfo;
 
 @end

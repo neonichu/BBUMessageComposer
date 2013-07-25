@@ -33,6 +33,9 @@
 +(NSString*)messageServiceName;
 +(NSInteger)messageURLLength;
 
--(void)postMessage:(NSString*)message withImages:(NSArray*)images fromAccount:(ACAccount*)account;
+-(void)postMessage:(NSString*)message
+        withImages:(NSArray*)images
+       fromAccount:(ACAccount*)account
+          userInfo:(NSDictionary*)userInfo;
 
 @end

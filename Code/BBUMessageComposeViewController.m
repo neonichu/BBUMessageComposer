@@ -878,7 +878,7 @@ enum {
     
     BBUMessagePoster *poster = [[self.posterClass alloc] init];
     poster.delegate = self;
-    [poster postMessage:tweet withImages:self.images fromAccount:self.serviceAccount];
+    [poster postMessage:tweet withImages:self.images fromAccount:self.serviceAccount userInfo:self.userInfo];
 }
 
 
