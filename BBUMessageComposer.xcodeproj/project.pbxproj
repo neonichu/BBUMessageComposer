@@ -106,6 +106,7 @@
 		869DE3A0179AAE0700E5AA9B /* DETweetURLAttachment.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DETweetURLAttachment.png; sourceTree = "<group>"; };
 		869DE3A1179AAE0700E5AA9B /* DETweetURLAttachment@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DETweetURLAttachment@2x.png"; sourceTree = "<group>"; };
 		869DE3B8179AB71600E5AA9B /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		869DE40117A0F3AA00E5AA9B /* BBUMessageComposer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBUMessageComposer.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +162,7 @@
 				869DE36A179A80B700E5AA9B /* Example */,
 				869DE36F179A81D700E5AA9B /* BBUAccountSelectorViewController.h */,
 				869DE370179A81D700E5AA9B /* BBUAccountSelectorViewController.m */,
+				869DE40117A0F3AA00E5AA9B /* BBUMessageComposer.h */,
 				869DE36C179A80F000E5AA9B /* BBUMessageComposeViewController.h */,
 				869DE36D179A80F000E5AA9B /* BBUMessageComposeViewController.m */,
 				869DE380179A853000E5AA9B /* BBUMessagePoster.h */,
